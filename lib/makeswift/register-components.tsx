@@ -24,7 +24,7 @@ ReactRuntime.registerComponent(NFTDropCard, {
     }),
     contractAddress: TextInput({
       label: 'Contract Address',
-      defaultValue: '0x322067594DBCE69A9a9711BC393440aA5e3Aaca1',
+      defaultValue: '0xe7E3781BdC8b525048c3FE83070bc49C143739AC',
     }),
     showMedia: Checkbox({
       label: 'Show media',

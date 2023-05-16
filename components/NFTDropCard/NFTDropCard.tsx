@@ -227,8 +227,9 @@ const NFTDropCard = forwardRef(function NFTDropCard(
                     </Text>
                     {/* Add unclaimed and claimed supply to get the total supply */}
                     {` / ${
-                      claimedSupply?.toNumber() + unclaimedSupply?.toNumber()
-                    } claimed`}
+                      // claimedSupply?.toNumber() + unclaimedSupply?.toNumber()
+                      activeClaimCondition?.maxClaimableSupply
+                    } total claimed`}
                   </Text>
                 ) : (
                   // Show loading state if we're still loading the supply

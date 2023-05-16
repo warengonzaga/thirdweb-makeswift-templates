@@ -1,10 +1,12 @@
-## Demo
-
-[https://makeswift-examples-thirdweb.vercel.app/](https://makeswift-examples-thirdweb.vercel.app/)
-
 # Visually build with Thirdweb components
 
 In this example, you'll learn how to integrate thirdweb components from your Next.js app into [Makeswift](https://www.makeswift.com) to make it visually editable.
+
+> Note: This is a template if you want to display the total supply based on active claim phase max claimable supply.
+
+## Demo
+
+[https://makeswift-examples-thirdweb.vercel.app/](https://makeswift-examples-thirdweb.vercel.app/)
 
 ## Tools
 
@@ -22,7 +24,7 @@ To quickly try this example either [deploy to Vercel](#deploy-your-own-to-vercel
 
 Deploy your own with Vercel
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fmakeswift%2Fmakeswift%2Ftree%2Fmain%2Fexamples%2Fthirdweb&project-name=makeswift-thirdweb-example&repo-name=makeswift-thirdweb-example&redirect-url=https%3A%2F%2Fapp.makeswift.com&integration-ids=oac_51ryd7Pob5ZsyTFzNzVvpsGq&external-id=ecommerce-thirdweb)
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fwarengonzaga%2Fthirdweb-makeswift-templates&project-name=thirdweb-makeswift-minting-page&repository-name=thirdweb-makeswift-minting-page&redirect-url=https%3A%2F%2Fapp.makeswift.com&integration-ids=oac_51ryd7Pob5ZsyTFzNzVvpsGq&external-id=ecommerce-thirdweb)
 
 With your deployment completed, [take a tour of the newly created store](#take-a-tour-of-your-web3-website)
 
