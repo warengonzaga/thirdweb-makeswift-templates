@@ -61,7 +61,8 @@ type Props = {
   chainId?: string
   showMedia?: boolean
   showDescription?: boolean
-  showClaimed?: boolean
+  // showClaimed?: boolean
+  totalClaimed?: string
 }
 
 const NFTDropCard = forwardRef(function NFTDropCard(
@@ -71,7 +72,8 @@ const NFTDropCard = forwardRef(function NFTDropCard(
     chainId,
     showMedia,
     showDescription,
-    showClaimed,
+    // showClaimed,
+    totalClaimed,
   }: Props,
   ref: Ref<HTMLDivElement>,
 ) {
@@ -215,7 +217,7 @@ const NFTDropCard = forwardRef(function NFTDropCard(
               </Text>
             )}
           </Grid>
-          {showClaimed && (
+          {totalClaimed !== "nototal" && (
             <>
               <Divider />
               <Flex justify="center">
@@ -228,7 +230,10 @@ const NFTDropCard = forwardRef(function NFTDropCard(
                     {/* Add unclaimed and claimed supply to get the total supply */}
                     {` / ${
                       // claimedSupply?.toNumber() + unclaimedSupply?.toNumber()
-                      activeClaimCondition?.maxClaimableSupply
+                      // activeClaimCondition?.maxClaimableSupply
+                      totalClaimed === "total" 
+                      ? claimedSupply?.toNumber() + unclaimedSupply?.toNumber() 
+                      : activeClaimCondition?.maxClaimableSupply
                     } total claimed`}
                   </Text>
                 ) : (
@@ -450,7 +455,8 @@ const NFTDropCardProvider = forwardRef(function NFTDropCardProvider(
     buttonTextColor,
     showMedia,
     showDescription,
-    showClaimed,
+    // showClaimed,
+    totalClaimed,
   }: ProviderProps,
   ref: Ref<HTMLDivElement>,
 ) {
@@ -526,7 +532,8 @@ const NFTDropCardProvider = forwardRef(function NFTDropCardProvider(
           chainId={chainId}
           showMedia={showMedia}
           showDescription={showDescription}
-          showClaimed={showClaimed}
+          // showClaimed={showClaimed}
+          totalClaimed={totalClaimed}
         />
       </ChakraProvider>
     </ThirdwebProvider>
