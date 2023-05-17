@@ -61,7 +61,6 @@ type Props = {
   chainId?: string
   showMedia?: boolean
   showDescription?: boolean
-  // showClaimed?: boolean
   totalClaimed?: string
 }
 
@@ -72,7 +71,6 @@ const NFTDropCard = forwardRef(function NFTDropCard(
     chainId,
     showMedia,
     showDescription,
-    // showClaimed,
     totalClaimed,
   }: Props,
   ref: Ref<HTMLDivElement>,
@@ -229,12 +227,11 @@ const NFTDropCard = forwardRef(function NFTDropCard(
                     </Text>
                     {/* Add unclaimed and claimed supply to get the total supply */}
                     {` / ${
-                      // claimedSupply?.toNumber() + unclaimedSupply?.toNumber()
-                      // activeClaimCondition?.maxClaimableSupply
-                      totalClaimed === "total" 
-                      ? claimedSupply?.toNumber() + unclaimedSupply?.toNumber() 
-                      : activeClaimCondition?.maxClaimableSupply
-                    } total claimed`}
+                      totalClaimed === "total" ? claimedSupply?.toNumber() + unclaimedSupply?.toNumber() 
+                        : totalClaimed === "max" ? activeClaimCondition?.maxClaimableSupply
+                        : totalClaimed === "available" ? activeClaimCondition?.availableSupply
+                        : "(error, supply basis not set!)" // make sure that the totalClaimed makeswift option has value
+                    } claimed`}
                   </Text>
                 ) : (
                   // Show loading state if we're still loading the supply
@@ -455,7 +452,6 @@ const NFTDropCardProvider = forwardRef(function NFTDropCardProvider(
     buttonTextColor,
     showMedia,
     showDescription,
-    // showClaimed,
     totalClaimed,
   }: ProviderProps,
   ref: Ref<HTMLDivElement>,
@@ -532,7 +528,6 @@ const NFTDropCardProvider = forwardRef(function NFTDropCardProvider(
           chainId={chainId}
           showMedia={showMedia}
           showDescription={showDescription}
-          // showClaimed={showClaimed}
           totalClaimed={totalClaimed}
         />
       </ChakraProvider>

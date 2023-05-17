@@ -36,11 +36,12 @@ ReactRuntime.registerComponent(NFTDropCard, {
     }),
     // showClaimed: Checkbox({ label: 'Show claimed', defaultValue: true }),
     totalClaimed: Select({
-      label: 'Select Total Claimed Basis',
+      label: 'Select Total Basis',
       options: [
         { label: 'No Total', value: 'nototal' },
         { label: 'Total Supply', value: 'total' },
-        { label: 'Max Supply', value: 'max' }
+        { label: 'Max Supply', value: 'max' },
+        { label: 'Available Supply', value: 'available' }
       ],
       defaultValue: 'total',
     }),
